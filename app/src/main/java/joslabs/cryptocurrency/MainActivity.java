@@ -101,8 +101,6 @@ String currencySelected, myconvert ,valbtc, valeth;
             @Override
             public void onClick(View v) {
                 final ProgressDialog loading = ProgressDialog.show(MainActivity.this, "Requesting...", "Please wait...", false, false);
-                //   if(validated) {
-//String ORDER_URL="https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR,KES,NGN,GBP,AUD,CAD,BRL,CNY,JPY,HKD,RUB,CZK,DKK,INR,ILS,CHF,TRY,NOK,SGD";
 
                 String ORDER_URL="https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms="+currencySelected;
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, ORDER_URL, new Response.Listener<String>() {
@@ -158,7 +156,7 @@ String currencySelected, myconvert ,valbtc, valeth;
 
 
                         System.out.print("was here");
-                        Log.e("paramx", params.toString());
+
                         return params;
                     }
                 };
